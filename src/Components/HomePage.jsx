@@ -30,7 +30,7 @@ function HomePage() {
     const {name, email, password}= form;
     let users = JSON.parse(localStorage.getItem('users')) || [];
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (modalType === 'register') {
 
@@ -38,7 +38,7 @@ function HomePage() {
          alert('All fields are required');
          return;
         }
-         if (!emailRegex.test(email)){
+         if (!emailValid.test(email)){
           alert('Invalid email format');
            return;
          }
@@ -65,7 +65,7 @@ function HomePage() {
         alert('All fields are required');
         return;
       }
-      if (!emailRegex.test(email)){
+      if (!emailValid.test(email)){
         alert('Invalid email format');
          return;
        }
