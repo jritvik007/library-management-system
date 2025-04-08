@@ -74,9 +74,8 @@ function HomePage() {
         return;
        }
 
-      const existingUser = users.find(
-        u => u.email === email && u.password === password
-      );
+      const existingUser = users.find(u => u.email === email && u.password === password);
+
       if (existingUser) {
         localStorage.setItem('currentUser', JSON.stringify(existingUser));
         setUser(existingUser);
@@ -116,7 +115,7 @@ function HomePage() {
         <button 
         onClick={()=>{
           if(user){
-            navigate('/Showbooks');
+            navigate('/ShowBooks');
           }
           else {
              setModalType('login');
