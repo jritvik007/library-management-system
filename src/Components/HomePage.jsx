@@ -28,12 +28,30 @@ function HomePage() {
   };
 
   const handleConfirm = () => {
+    const {name, email, password}= form;
     let users = JSON.parse(localStorage.getItem('users')) || [];
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     if (modalType === 'register') {
-      const existingUser = users.find(u => u.email === form.email);
+
+      if(!name || !email || !password){
+         alert('All fields are required');
+         return;
+        }
+         if (!emailRegex.test(email)){
+          alert('Invalid email format');
+           return;
+         }
+         if(password.length!==8){
+          alert('Password must be exactly 8 characters long');
+          return;
+         }
+      
+      const existingUser = users.find(u => u.email === email);
       if (existingUser) {
         alert('User already exists with this email.');
+        return;
       }
       const newUser = { ...form };
       users.push(newUser);
@@ -44,8 +62,20 @@ function HomePage() {
     }
 
     if (modalType === 'login') {
+      if(!email || !password){
+        alert('All fields are required');
+        return;
+      }
+      if (!emailRegex.test(email)){
+        alert('Invalid email format');
+         return;
+       }
+       if(password.length!==8){
+        alert('Password must be exactly 8 characters long');
+        return;
+       }
       const existingUser = users.find(
-        u => u.email === form.email && u.password === form.password
+        u => u.email === email && u.password === password
       );
       if (existingUser) {
         localStorage.setItem('currentUser', JSON.stringify(existingUser));
@@ -83,10 +113,18 @@ function HomePage() {
         </div>
       </nav>
 
-      <header style={{ textAlign: 'center', padding: '30px' }}>
+      <header>
         <h1>Welcome to the Library</h1>
         <p>Explore a world of knowledge and discover new books</p>
-        <button onClick={() => navigate('/ShowBooks')}>Browse Books</button>
+        <button 
+        onClick={()=>{
+          if(user){
+            navigate('/Showbooks');
+          }
+          else {
+             setModalType('login');
+          }
+        }}>Browse Books</button>
       </header>
 
       <section style={{ padding: '20px' }}>
