@@ -32,6 +32,18 @@ nav button {
     padding-left: 24px;
 }
 
+.login-button:hover{
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+.register-button:hover{
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
 header {
   text-align: center;
   padding: 80px 20px;
