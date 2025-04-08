@@ -56,11 +56,6 @@
     cursor: pointer;
   }
   
-  .cancel-button {
-    background-color: #ccc;
-    color: #333;
-  }
-  
   .modal-buttons button:first-child {
     background-color: black;
     color: white;

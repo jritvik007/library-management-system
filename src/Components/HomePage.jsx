@@ -13,7 +13,6 @@ const categories = [
 
 function HomePage() {
   const navigate = useNavigate();
-
   const [user, setUser] = useState(null);
   const [modalType, setModalType] = useState(null); 
   const [form, setForm] = useState({ name: '', email: '', password: '' });
@@ -74,6 +73,7 @@ function HomePage() {
         alert('Password must be exactly 8 characters long');
         return;
        }
+
       const existingUser = users.find(
         u => u.email === email && u.password === password
       );
@@ -84,7 +84,6 @@ function HomePage() {
         alert('User not registered. Please register first.');
       }
     }
-
     setModalType(null);
     setForm({ name: '', email: '', password: '' });
   };
@@ -101,9 +100,7 @@ function HomePage() {
         <h1>Library Management</h1>
         <div> 
           {user ? (
-            <>
-              <button className='logout-button' onClick={handleLogout}>Logout</button>
-            </>
+               <button className='logout-button' onClick={handleLogout}>Logout</button>  
           ) : (
             <>
               <button className='login-button' onClick={() => setModalType('login')}>Login</button>

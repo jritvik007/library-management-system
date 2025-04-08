@@ -1,7 +1,7 @@
 import React from 'react';
 import './Modal.css'; 
 
-function Modal({ type, form, onChange, onConfirm, onClose }) {
+function Modal({ type, form, onChange, onConfirm}) {
   return (
     <div className="modal-overlay">
       <div className="modal-box">
