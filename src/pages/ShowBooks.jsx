@@ -66,7 +66,7 @@ function Showbooks({ books }) {
               <p>Author: {book.author}</p>
               <div className='quantity-container'>
                 {filter === 'cart' ? (
-                  <button onClick={() => handleRemoveFromCart(book.id)}>Remove</button>
+                  <button onClick={() => handleRemoveFromCart(book.id)}>Remove from Cart</button>
                 ) : (
                   <button onClick={() => addToCart(book)} disabled={isAddedToCart}>
                     {isAddedToCart ? "Added to Cart" : "Add to Cart"}
