@@ -1,9 +1,7 @@
-
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './Components/HomePage';
 import ShowBooks from './pages/ShowBooks';
-import CartPage from './pages/CartPage';
 import book1 from './Assets/images/book1.jpg';
 import book2 from './Assets/images/book2.jpg';
 import book3 from './Assets/images/book3.jpg';
@@ -34,9 +32,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/ShowBooks" element={<ShowBooks books={books} />} />
-        <Route path="/CartPage" element={<CartPage />} />
-        <Route path="/RemainingBooks" element={<remainingBooks />} />
+        <Route path="/ShowBooks" element={<ShowBooks books={books} />} />   
       </Routes>
     </Router>
   );
