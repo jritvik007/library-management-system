@@ -49,7 +49,7 @@ function HomePage() {
       
       const existingUser = users.find(u => u.email === email);
       if (existingUser) {
-        alert('User already exists with this email.');
+        alert('User already exists with this email. Register with a different email');
         return;
       }
       const newUser = { ...form };
