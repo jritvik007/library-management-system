@@ -28,7 +28,7 @@ function HomePage() {
 
   const handleConfirm = () => {
     const {name, email, password}= form;
-    let users = JSON.parse(localStorage.getItem('users')) || [];
+    const users = JSON.parse(localStorage.getItem('users'));
 
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
