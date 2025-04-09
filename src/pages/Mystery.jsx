@@ -15,7 +15,7 @@ function Mystery({books}) {
     <div className="show-books" style={{ backgroundImage: `url(${library})`}}>
       <nav className="navbar">
         <h1>Mystery Books</h1>
-        <button onClick={() => navigate('/categories')} className='nav-button'>Back</button>
+        <button onClick={() => navigate('/categories')} className='nav-buttons'>Back</button>
         <button className="nav-button" onClick={() => navigate('/')}>Home</button>
       </nav>
 
