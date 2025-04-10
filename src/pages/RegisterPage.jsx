@@ -12,6 +12,16 @@ function RegisterPage() {
   const handleRegister = (e) => {
     e.preventDefault();
 
+    if (!username.trim()) {
+      setError('Username is required');
+      return;
+    }
+
+    if (password.length < 6) {
+      setError('Password must be at least 6 characters');
+      return;
+    }
+
     if (password !== confirmPassword) {
       setError('Passwords do not match');
       return;
@@ -23,11 +33,11 @@ function RegisterPage() {
     };
 
     localStorage.setItem('user', JSON.stringify(newUser));
-    navigate('/login'); 
+    navigate('/login'); // Redirect to login after successful registration
   };
 
   const handleCancel = () => {
-    navigate('/'); 
+    navigate('/');
   };
 
   return (
