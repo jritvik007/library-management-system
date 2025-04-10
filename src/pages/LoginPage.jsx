@@ -11,14 +11,20 @@ function LoginPage() {
   const handleLogin = (e) => {
     e.preventDefault();
 
+    if (!username.trim() || !password.trim()) {
+      setError('Please enter both username and password');
+      return;
+    }
+
     const storedUser = JSON.parse(localStorage.getItem('user'));
 
     if (storedUser) {
       if (storedUser.username === username && storedUser.password === password) {
         localStorage.setItem('isLoggedIn', true);
-        navigate('/'); 
+        localStorage.setItem('loggedInUser', storedUser.username);
+        navigate('/');
       } else {
-        setError('Incorrect username or password');
+        setError('No user found. Please register first.');
       }
     } else {
       setError('No user found. Please register first.');
@@ -26,7 +32,7 @@ function LoginPage() {
   };
 
   const handleCancel = () => {
-    navigate('/'); 
+    navigate('/');
   };
 
   return (
