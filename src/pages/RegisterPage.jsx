@@ -33,7 +33,7 @@ function RegisterPage() {
     };
 
     localStorage.setItem('user', JSON.stringify(newUser));
-    navigate('/login'); // Redirect to login after successful registration
+    navigate('/login'); 
   };
 
   const handleCancel = () => {
