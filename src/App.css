@@ -123,12 +123,29 @@ section {
   font-size: 13px;
 }
 
+.welcome{
+  margin-right: 10px;
+}
+
 @media screen and (max-width: 768px) {
   nav {
     flex-direction: row;
     text-align: center;
   }
 
+.browse-button{
+  margin-left: 180px;
+}
+
+.logout-button{
+  padding-right: 38px;
+        padding-left: 40px;
+        
+}
+
+.welcome{
+  margin-left: 45px;
+}
   nav button {
     margin-left: 10px;
     margin-top: 10px;
@@ -213,5 +230,18 @@ section {
 
   header button {
     padding: 8px 16px;
+  }
+  .browse-button {
+    padding: 5px;
+    margin-left: 122px;
+  }
+  .logout-button {
+    padding: 5px;
+    margin-left: auto;
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+  .welcome{
+     margin-left: auto;
   }
 }

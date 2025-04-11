@@ -30,7 +30,7 @@ function HomePage() {
         <div>
           {isLoggedIn ? (
             <>
-              <span style={{ marginRight: '10px' }}>Welcome, {loggedInUser}</span>
+              <span className='welcome'>Welcome, {loggedInUser}</span>
               <button onClick={handleLogout} className="logout-button">Logout</button>
               <button onClick={() => navigate('/showbooks')} className="browse-button">Browse Books</button>
             </>
