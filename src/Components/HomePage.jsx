@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 function HomePage() {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -51,10 +52,10 @@ function HomePage() {
         )}
       </header>
 
-      <section style={{ padding: '20px' }}>
-        <h3>Featured Categories</h3>
+      <section style={{ padding: '20px'}}>
+        <h3>About Books</h3>
         <div>
-          Here knowledge meets community. We offer a wide range of books, digital resources, and engaging programs to foster a love of reading and lifelong learning. Explore our catalog, join events, and become a part of our vibrant community.
+        Books have always held a special place in human history and culture, serving as a vital means of communication, education, and entertainment. From ancient scrolls to modern digital eBooks, they have evolved over centuries, yet their importance remains undiminished. Books allow us to connect with ideas, emotions, and experiences far beyond our immediate surroundings. They give us access to the thoughts of great minds, the beauty of diverse cultures, and the complexity of human emotions. Through fiction, readers can immerse themselves in imaginary worlds, live the lives of unique characters, and explore scenarios that might never occur in real life. Non-fiction books, on the other hand, provide factual knowledge, inspire action, and offer insights into everything from science and history to personal growth and philosophy.
         </div>
       </section>
     </div>
