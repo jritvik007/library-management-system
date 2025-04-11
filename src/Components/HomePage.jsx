@@ -4,18 +4,23 @@ import { useNavigate } from 'react-router-dom';
 function HomePage() {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loggedInUser, setLoggedInUser] = useState('');
 
   useEffect(() => {
     const loggedIn = localStorage.getItem('isLoggedIn');
-    if (loggedIn) {
+    const user = localStorage.getItem('loggedInUser');
+    if (loggedIn && user) {
       setIsLoggedIn(true);
+      setLoggedInUser(user);
     }
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem('isLoggedIn'); 
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('loggedInUser');
     setIsLoggedIn(false);
-    navigate('/'); 
+    setLoggedInUser('');
+    navigate('/');
   };
 
   return (
@@ -25,6 +30,7 @@ function HomePage() {
         <div>
           {isLoggedIn ? (
             <>
+              <span style={{ marginRight: '10px' }}>Welcome, {loggedInUser}</span>
               <button onClick={handleLogout} className="logout-button">Logout</button>
               <button onClick={() => navigate('/showbooks')} className="browse-button">Browse Books</button>
             </>
