@@ -26,8 +26,6 @@ function LoginPage() {
       } else {
         setError('No user found. Please register first.');
       }
-    } else {
-      setError('No user found. Please register first.');
     }
   };
 
